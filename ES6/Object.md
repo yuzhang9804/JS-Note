@@ -1,5 +1,3 @@
-# ***ES6
-
 ## Object.is()
 
 ES6 提出 “same-value equality”（同值相等）算法， 解决相等运算符 和 严格相等运算符的缺点
