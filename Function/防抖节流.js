@@ -9,7 +9,7 @@
 /**
  * 防抖函数
  *
- * @param {function}    func            回调函数
+ * @param {function}    fun
  * @param {number}      [wait=50]       表示时间窗口间隔时间
  * @param {boolean}     [immediate=true]    是否立即调用函数
  * @returns     返沪客户端调用函数
@@ -26,7 +26,7 @@ const debounce = function(fun, wait = 500, immediate = true) {
         }
       }, wait);
 
-  const debounced = function(...params){
+  return function(...params){
     if(!timer){
       timer = later();
       if(immediate){
@@ -40,5 +40,4 @@ const debounce = function(fun, wait = 500, immediate = true) {
       timer = later();
     }
   }
-  return debounced;
 }
