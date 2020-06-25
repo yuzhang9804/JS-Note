@@ -8,7 +8,6 @@
 // - 节流是将多次执行变为每隔一段时间执行
 /**
  * 防抖函数
- *
  * @param {function}    fun
  * @param {number}      [wait=50]       表示时间窗口间隔时间
  * @param {boolean}     [immediate=true]    是否立即调用函数
