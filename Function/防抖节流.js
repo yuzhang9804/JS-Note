@@ -11,7 +11,7 @@
  * @param {function}    fun
  * @param {number}      [wait=50]       表示时间窗口间隔时间
  * @param {boolean}     [immediate=true]    是否立即调用函数
- * @returns     返沪客户端调用函数
+ * @returns     返回客户端调用函数
  */
 function debounce(fun, wait = 500, immediate = true) {
   let timer, context, args;
