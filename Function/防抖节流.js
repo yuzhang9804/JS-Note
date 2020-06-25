@@ -14,7 +14,7 @@
  * @param {boolean}     [immediate=true]    是否立即调用函数
  * @returns     返沪客户端调用函数
  */
-const debounce = function(fun, wait = 500, immediate = true) {
+function debounce(fun, wait = 500, immediate = true) {
   let timer, context, args;
   // 延迟执行函数
   const later = _ =>
