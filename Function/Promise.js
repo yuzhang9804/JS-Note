@@ -202,14 +202,3 @@ MyPromise.defer = MyPromise.deferred = function () {
   })
   return dfd
 }
-module.exports = MyPromise
-
-
-const p = () => {
-  return new MyPromise((res) => {
-    res(100)
-  })
-}
-
-p()
-
