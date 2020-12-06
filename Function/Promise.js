@@ -29,7 +29,7 @@ function MyPromise (fun) {
     }
 
     // 保证代码执行顺序
-    setTimeout(() => {
+    queueMicrotask(() => {
       // 改变 Promise 的状态
       _this.state = FULFILLED;
       // 改变 Promise 的 value
@@ -193,4 +193,23 @@ function resolvePromise (promise2, x, resolve, reject) {
     resolve(x);
   }
 }
+
+MyPromise.defer = MyPromise.deferred = function () {
+  let dfd = {};
+  dfd.promise = new Promise((resolve, reject) => {
+    dfd.resolve = resolve;
+    dfd.reject = reject;
+  })
+  return dfd
+}
+module.exports = MyPromise
+
+
+const p = () => {
+  return new MyPromise((res) => {
+    res(100)
+  })
+}
+
+p()
 
